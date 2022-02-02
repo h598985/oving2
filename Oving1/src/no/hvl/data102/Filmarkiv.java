@@ -35,16 +35,15 @@ public class Filmarkiv implements FilmarkivADT {
 
 	@Override
 	public void leggTilFilm(Film nyFilm) {
-		
-		if(antall < arkiv.length) {
-			arkiv[antall] = nyFilm;
-			antall++;
-		}
-		else {
+
+		if (full()) {
+
 			utvid();
-			arkiv[antall] = nyFilm;
-			antall++;
+
 		}
+
+		arkiv[antall] = nyFilm;
+		antall++;
 
 	}
 
@@ -153,6 +152,10 @@ public class Filmarkiv implements FilmarkivADT {
 		return film;
 
 		
+	}
+	
+	private boolean full() {
+		return antall >= arkiv.length;
 	}
 
 }
