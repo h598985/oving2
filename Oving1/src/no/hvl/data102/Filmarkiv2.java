@@ -53,6 +53,10 @@ public class Filmarkiv2 implements FilmarkivADT{
 		
 		nyFilm.setElement(film);
 		
+		start = nyFilm;
+		
+		antall++;
+		
 		
 		
 	}
@@ -112,8 +116,21 @@ public class Filmarkiv2 implements FilmarkivADT{
 	@Override
 	public int antall(Sjanger sjanger) {
 		
-		// TODO Auto-generated method stub
-		return 0;
+		int antallSjanger= 0;
+		
+		boolean funne = false;
+		
+		LinearNode<Film> aktuelleFilm = start;
+		
+		for(int i = 0; i < antall && !funne; i++) {
+			
+			if(aktuelleFilm.getElement().getSjanger().equals(sjanger)) {
+				antallSjanger++;
+			}
+			aktuelleFilm = aktuelleFilm.getNeste();
+			
+		}
+		return antallSjanger;
 	}
 
 	@Override
@@ -137,7 +154,7 @@ public class Filmarkiv2 implements FilmarkivADT{
 				aktuelleFilm = aktuelleFilm.getNeste();
 		}
 		
-		return null;
+		return prod;
 	}
 
 	@Override
