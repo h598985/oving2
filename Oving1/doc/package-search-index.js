@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"no.hvl.data102"},{"l":"no.hvl.data102.adt"},{"l":"no.hvl.data102.klient"}];updateSearchResults();
